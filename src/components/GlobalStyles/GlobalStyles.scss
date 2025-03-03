@@ -3,6 +3,9 @@
 
 :root {
     --primary: rgba(254, 44, 85, 1);
+    --black: #000;
+    --white: #fff;
+    --text-color: #333;
     --default-layout-header-heiht: 60px;
     --default-layout-width: 1150px;
 }
@@ -22,4 +25,17 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+    color: var(--text-color);
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+input,
+button,
+[tabindex] {
+    border: none;
+    outline: none;
 }
