@@ -18,6 +18,7 @@ import images from '../../../../assets/images';
 import AccountItem from '../../../AccountIem';
 import Button from '../../../Button';
 import Menu from '../../../Popper/Menu';
+import MenuItem from '../../../Popper/Menu/MenuItem';
 
 const cx = classNames.bind(styles);
 
@@ -25,6 +26,28 @@ const MENU_ITEM = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Việt Nam',
+                },
+
+                {
+                    type: 'language',
+                    code: 'zh-CN',
+                    title: 'China',
+                },
+            ],
+        },
     },
 
     {
@@ -48,6 +71,14 @@ function Header() {
         }, 0);
     }, []);
 
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                //handle change language
+                break;
+            default:
+        }
+    };
     return (
         <header className={cx('wrapper')}>
             <div className={cx('content')}>
@@ -86,7 +117,7 @@ function Header() {
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
 
-                    <Menu items={MENU_ITEM}>
+                    <Menu items={MENU_ITEM} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
