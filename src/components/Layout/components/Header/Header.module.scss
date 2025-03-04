@@ -1,11 +1,12 @@
 .wrapper {
     --search-border-radius: 92px;
     --search-button-width: 52px;
-    width: 100%;
-    height: var(--default-layout-header-heiht);
-    box-shadow: 0 1px 1px rgb(0 0 0 / 12%);
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: var(--default-layout-header-height);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 12%);
+    background-color: white;
 }
 .content {
     height: 100%;
@@ -90,4 +91,11 @@
     &:active {
         background-color: rgba(22, 24, 35, 0.06);
     }
+}
+
+.more-btn {
+    font-size: 2rem;
+    margin-left: 24px;
+    background-color: transparent;
+    padding: 4px 8px;
 }
