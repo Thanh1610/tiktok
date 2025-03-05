@@ -3,7 +3,6 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleXmark,
-    faCloudArrowUp,
     faCoins,
     faEarthAsia,
     faGear,
@@ -11,7 +10,7 @@ import {
     faSignOut,
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
-import { faCircleQuestion, faKeyboard, faPaperPlane, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faCircleQuestion, faKeyboard, faUser } from '@fortawesome/free-regular-svg-icons';
 import Tippy from '@tippyjs/react';
 import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
@@ -23,6 +22,8 @@ import images from '../../../../assets/images';
 import AccountItem from '../../../AccountIem';
 import Button from '../../../Button';
 import Menu from '../../../Popper/Menu';
+import { MessagesIcon, UploadIcon, InboxIcon } from '../../../Icons';
+import Image from '../../../Image';
 
 const cx = classNames.bind(styles);
 
@@ -150,13 +151,20 @@ function Header() {
                         <>
                             <Tippy content="Upload" placement="bottom" delay={0}>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudArrowUp} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
 
                             <Tippy content="Messages" placement="bottom" delay={0}>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <MessagesIcon />
+                                </button>
+                            </Tippy>
+
+                            <Tippy content="Messages" placement="bottom" delay={0}>
+                                <button className={cx('action-btn', 'inbox-btn')}>
+                                    <InboxIcon />
+                                    <span className={cx('badge')}>5</span>
                                 </button>
                             </Tippy>
                         </>
@@ -169,7 +177,7 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEM} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/6e5df93a012f301f942d1dd5172c8884~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=661559a5&x-expires=1741255200&x-signature=nIt0v%2FwWAER%2BypEkNslIzx98UoQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=sg1"
                                 className={cx('user-avatar')}
                                 alt="TaTuanThanh"
