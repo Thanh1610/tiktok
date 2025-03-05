@@ -40,7 +40,7 @@ export const InboxIcon = ({ className, width = '2.8rem', height = '2.8rem', fill
             width={width}
             height={height}
             viewBox="0 0 32 32"
-            fill="currentColor"
+            fill={fill}
             xmlns="http://www.w3.org/2000/svg"
         >
             <path
