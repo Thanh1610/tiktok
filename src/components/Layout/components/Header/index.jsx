@@ -14,6 +14,7 @@ import { MessagesIcon, UploadIcon, InboxIcon } from '../../../Icons';
 import Image from '../../../Image';
 import Search from '../Search';
 import { Link } from 'react-router';
+import roustesConfig from '../../../../config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -73,7 +74,7 @@ function Header() {
         {
             icon: <FontAwesomeIcon icon={faUser} />,
             title: 'View profile',
-            to: '/profile',
+            to: roustesConfig.profile,
         },
         {
             icon: <FontAwesomeIcon icon={faCoins} />,
@@ -96,7 +97,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('content')}>
-                <Link to="/">
+                <Link to={roustesConfig.home} className={cx('logo-link')}>
                     <img src={images.logo} />
                 </Link>
                 <span>
